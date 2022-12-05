@@ -24,14 +24,14 @@ It is GraphQL endpoint behind Cognito authentication, user and password will be 
 Please remember to treat this API as any third-party API. Which might fail for multiple reasons. Your code should be prepared for such case.
 
 ## Technical requirements
-• Python: 3.8+
-• Version control: Git
-• Interface: CLI or lambda function (serverless.com framework) is fine
+* Python: 3.8+
+* Version control: Git
+* Interface: CLI or lambda function (serverless.com framework) is fine
 
 ## What is important for us during review of your code?
-• Complexity of code
-• Libraries used
-• Consistency across codebase
-• Is code following python patterns
-• Cleanness of code
-• Error handling and error reporting/logging
+* Complexity of code
+* Libraries used
+* Consistency across codebase
+* Is code following python patterns
+* Cleanness of code
+* Error handling and error reporting/logging
