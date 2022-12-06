@@ -1,39 +1,56 @@
 # Epsy Backend Technical Test
 
 ## Business requirements
-Your goal is to prepare function that will download encrypted CSV file from S3 bucket that contains list of users’ IDs and use those IDs to fetch extra information about users.
+Your goal is to prepare application that will:
 
-Fetched data should be sent to standard `std.out` in format:
+1. Download a S3 file that contains list of users IDs
+2. Use those IDs and call GraphQL API to fetch additional information about those users. API is GraphQL api with Cognito authentication in place. Credentials will be provided to you.
+3. Fetched additional information should be sent to standard `std.out` in JSON format
+4. Any errors should be logged to `std.error` in JSON format
+
+### S3
+File is located in `s3://<put address here>`. It is single file that will have format like:
+```csv
+418c552f-2e71-4cb6-8b7c-f68a6fdd246a
+79e0bd79-a40c-4167-b927-44341d27ab81
+9b21be6a-72ea-49c4-8f5f-c18068cc4a70
 ```
-user_id   | user_info
-abcd-123  | {“first_name”: “John”, “last_name”: “Doe”, “birthdate”: “26.09.1986”}
+
+### GraphQL API
+Schema can be found in [technical_test_schema.graphql](./technical_test_schema.graphql) file.
+
+Address: `https://<put address here>`
+
+### std.out
+Every single row that is processed should be:
+1. Sent to a `std.out`
+2. In JSON format, where keys need to follow lowercase underscore naming convention e.g. `first_name` rather than `FirstName`
+3. Every processed row is a single entry to `std.out` (every line represents single row)
+
+Additional data normalization:
+1. API field `birthday` should be in format `{month}.{day}.{year}` e.g. `26.09.1986`
+
+### std.error
+As with every API, this GraphQL is not an exception, you might have cases where its timeouts, throws an error or returns wrong data.
+
+In this case rows that couldn't be processed should be sent to `std.error`. With few things kept in mind:
+1. Every unprocessed row should be separated entry to `std.error` (every line represents single row)
+2. It should have format:
+```json
+{"user_id":  "<id of user that was unable to process>", "details": "<any extra information that might be helpful when debugging this problem>"}
 ```
-
-please remember to format “birthdate” to `{Month}.{Day with leading zero}.{Year}`
-
-Unprocessed data should be sent to `std.error` in format that will let us recognise user and error that happened during processing e.g.
-```
-user_id  | error
-abcd-123 | Wrong JSON format
-```
-
-## CSV File
-File is located in `S3://<put address here>` and you can decrypt it using key <put private key address here>
-
-## User details service
-It is GraphQL endpoint behind Cognito authentication, user and password will be provided to you. 
-
-Please remember to treat this API as any third-party API. Which might fail for multiple reasons. Your code should be prepared for such case.
 
 ## Technical requirements
-* Python: 3.8+
-* Version control: Git
-* Interface: CLI or lambda function (serverless.com framework) is fine
+Please prepare application with use of Python in `3.8+` version. It can be either CLI tool, serverless project, another API, interface is up to you. 
+
+But please provide us with steps how to run your code in `README.md` file. 
+
+Code can be put in Github repository and link shared with us, so we can review it :)
 
 ## What is important for us during review of your code?
-* Complexity of code
+* Complexity of the code
 * Libraries used
-* Consistency across codebase
-* Is code following python patterns
-* Cleanness of code
+* Consistency across the codebase
+* Is the code following python patterns
+* Cleanness of the code
 * Error handling and error reporting/logging
