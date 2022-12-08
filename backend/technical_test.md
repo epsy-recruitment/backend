@@ -28,7 +28,7 @@ Every single row that is processed should be:
 3. Every processed row is a single entry to `std.out` (every line represents single row)
 
 Additional data normalization:
-1. API field `birthday` should be in format `{month}.{day}.{year}` e.g. `26.09.1986`
+1. API field `birthday` should be in format `{month}/{day}/{year}` e.g. `26/09/1986`
 
 ### std.error
 As with every API, this GraphQL is not an exception, you might have cases where its timeouts, throws an error or returns wrong data.
