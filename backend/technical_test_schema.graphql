@@ -1,0 +1,10 @@
+type User {
+    id: ID!
+    firstName: String!
+    lastName: String!
+    birthday: String!
+}
+
+type Query {
+    fetchUser(id: String!): User
+}
