@@ -3,13 +3,13 @@
 ## Business requirements
 Your goal is to prepare application that will:
 
-1. Download a S3 file that contains list of users IDs
+1. Download a file that contains list of users IDs
 2. Use those IDs and call GraphQL API to fetch additional information about those users. API is GraphQL api with Cognito authentication in place. Credentials will be provided to you.
 3. Fetched additional information should be sent to standard `std.out` in JSON format
 4. Any errors should be logged to `std.error` in JSON format
 
-### S3
-File is located in `s3://<put address here>`. It is single file that will have format like:
+### File
+File location will be shared with you alongside API credentials. It is single file that will have format like:
 ```csv
 418c552f-2e71-4cb6-8b7c-f68a6fdd246a
 79e0bd79-a40c-4167-b927-44341d27ab81
