@@ -19,7 +19,9 @@ File is located in `s3://<put address here>`. It is single file that will have f
 ### GraphQL API
 Schema can be found in [technical_test_schema.graphql](./technical_test_schema.graphql) file.
 
-Address: `https://<put address here>`
+Address: `https://v3bdtj5rojdj5okuxsj5lirszi.appsync-api.us-east-1.amazonaws.com/graphql`
+
+Authorization: `API_KEY` was used.
 
 ### std.out
 Every single row that is processed should be:
