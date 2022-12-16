@@ -1,8 +1,15 @@
+enum UserEnum {
+    USER,
+    ADMIN,
+    CLIENT
+}
+
 type User {
     id: ID!
     firstName: String!
     lastName: String!
-    birthday: String!
+    gender: String!
+    role: UserEnum!
 }
 
 type Query {
