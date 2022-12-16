@@ -1,9 +1,5 @@
 # Join Epsy team!
-
-At the moment this repository contains only our backend technical test.
-
 If you want to know more about Epsy have a look at [our carriers page](https://epsyhealth.com/careers), don't hesitate to drop us an email at `hiring@epsyhealth.com`.
-
 
 # Epsy Backend Technical Test
 
@@ -51,37 +47,38 @@ Additional requirements:
 1. Fetched additional information should be sent to standard `std.out` in either JSON or table format
 2. Any errors should be logged to `std.error` in JSON format
 
-
 ## Input data
 
 ## Cognito Authentication
 
-Client Id: 27s2bt78i19m035mep3aqs4502
-IdentityPoolId: us-east-1:6066528c-c7c6-47b9-bd5a-56d2d41afdfe
+**Client Id**: `27s2bt78i19m035mep3aqs4502`
+
+**IdentityPoolId**: `us-east-1:6066528c-c7c6-47b9-bd5a-56d2d41afdfe`
 
 ### API
 
-Address: `https://v3bdtj5rojdj5okuxsj5lirszi.appsync-api.us-east-1.amazonaws.com/graphql`
-Schema: [technical_test_schema.graphql](./technical_test_schema.graphql)
+**Address**: `https://v3bdtj5rojdj5okuxsj5lirszi.appsync-api.us-east-1.amazonaws.com/graphql`
+
+**Schema**: [technical_test_schema.graphql](./technical_test_schema.graphql)
+
 Username and password will be provided in separate message.
 
 > Please note that our API may occasionally return errors, and your code should handle that. 
 
 ### S3 Data location
-Bucket name: hiringapi.epsy.dev
-File key: events.csv
+**Bucket name**: `hiringapi.epsy.dev`
+
+**File key**: `events.csv`
 
 Bucket permissions:
-- s3:GetObject
-- s3:ListBucket
-
+- `s3:GetObject`
+- `s3:ListBucket`
 
 ## Technical requirements
 - Python 3.8+ compatibility 
 - Code should be shared via GitHub (public or private repository)
 - Instructions for running the code should be included in `README.md` file.
 - All exceptions and processing errors should be written to `std.err`
-
 
 ## FAQ
 > ### How much time do I have for the task?
@@ -106,16 +103,14 @@ Bucket permissions:
 
 > ### Do I need to use listed libraries 
 >
-> Yes, click and boto3 are common libraries in our stack  
-
+> Yes, click and boto3 are common libraries in our stack
 
 ## Useful information
 
 - https://aws.amazon.com/appsync/ - GraphQL Server implementation 
 - https://aws.amazon.com/cognito/ - IDP implementation 
 - https://aws.amazon.com/s3/ - file storage 
-- https://boto3.amazonaws.com/v1/documentation/api/latest/index.html - Python AWS SDK 
-
+- https://boto3.amazonaws.com/v1/documentation/api/latest/index.html - Python AWS SDK
 
 ## What is important for us during review of your code?
 - Complexity of the code
