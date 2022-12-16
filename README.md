@@ -54,7 +54,13 @@ Additional requirements:
 
 ## Input data
 
+## Cognito Authentication
+
+Client Id: 27s2bt78i19m035mep3aqs4502
+IdentityPoolId: us-east-1:6066528c-c7c6-47b9-bd5a-56d2d41afdfe
+
 ### API
+
 Address: `https://v3bdtj5rojdj5okuxsj5lirszi.appsync-api.us-east-1.amazonaws.com/graphql`
 Schema: [technical_test_schema.graphql](./technical_test_schema.graphql)
 Username and password will be provided in separate message.
@@ -62,9 +68,12 @@ Username and password will be provided in separate message.
 > Please note that our API may occasionally return errors, and your code should handle that. 
 
 ### S3 Data location
-Bucket name:
-File key: 
+Bucket name: hiringapi.epsy.dev
+File key: events.csv
 
+Bucket permissions:
+- s3:GetObject
+- s3:ListBucket
 
 
 ## Technical requirements
